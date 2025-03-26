@@ -40,6 +40,8 @@ function findMax(arr){
     return max;
 }
 
+findMax(arr)
+
 // # 5
 function transpose(){
     let rows = arr.length
@@ -55,15 +57,21 @@ function transpose(){
     return transposed
 }
 
-// print2dArray(arr)
-// console.log(" ")
-// 
-// console.log(sum2dArray(arr))
-// console.log(" ")
-// 
-// modify2dArray(arr, 1, 1, 10)
-// console.log(arr)
-// 
-// console.log(findMax(arr))
+first = print2dArray(arr)
+console.log(first)
+console.log('')
 
-console.log(transpose(arr))
+second = sum2dArray(arr)
+console.log(second)
+console.log('')
+
+modify2dArray(arr, 0, 2, 15)
+console.log(arr)
+console.log('')
+
+fourth = findMax(arr)
+console.log(fourth)
+console.log('')
+
+fifth = transpose(arr)
+console.log(fifth)
