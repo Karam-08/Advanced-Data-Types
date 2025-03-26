@@ -31,7 +31,7 @@ function getRow(board, row){
     return board[row];
 }
 
-// console.log(getRow(_BOARD, 4))
+ console.log(getRow(_BOARD, 4))
 
 function getColumn(board, col){
     // Returns an array with all of the array elements from the column

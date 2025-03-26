@@ -4,36 +4,66 @@ const arr = [
     [7, 8, 9]
 ]
 
-function print2DArray(){
-
+// # 1
+function print2dArray(arr){
+    for(var i = 0; i < arr.length; i++){
+        console.log(arr[i])
+    }
 }
 
-function sum2DArray(){
-    
+// # 2
+function sum2dArray(arr){
+    let sum = 0
+    for(var i = 0; i < arr.length; i++){
+        for(var j = 0; j < arr[i].length; j++){
+            sum += arr[i][j];
+        }
+    }
+    return sum;
 }
 
-function modify2DArray(row, col, newValue){
-
+// # 3
+function modify2dArray(arr, row, col, newValue){
+    arr[row][col] = newValue
 }
 
-function findMax(){
-
+// # 4
+function findMax(arr){
+    let max = 0
+    for(var i = 0; i < arr.length; i++){
+        for(var j = 0; j < arr[i].length; j++){
+            if(max < arr[i][j]){
+                max = arr[i][j];
+            }
+        }
+    }
+    return max;
 }
 
+// # 5
 function transpose(){
+    let rows = arr.length
+    let cols = arr[0].length
+    let transposed = []
 
+    for(var j = 0; j < cols; j++){
+        transposed[j] = []
+        for(var i = 0; i < rows; i++){
+            transposed[j][i] = arr[i][j]
+        }
+    }
+    return transposed
 }
 
-print2DArray(arr);
+// print2dArray(arr)
+// console.log(" ")
+// 
+// console.log(sum2dArray(arr))
+// console.log(" ")
+// 
+// modify2dArray(arr, 1, 1, 10)
+// console.log(arr)
+// 
+// console.log(findMax(arr))
 
-
-sum2DArray(arr);
-
-
-modify2DArray(arr);
-
-
-findMax(arr);
-
-
-transpose(arr);
+console.log(transpose(arr))
