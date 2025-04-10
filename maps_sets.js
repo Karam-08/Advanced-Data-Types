@@ -50,5 +50,26 @@ console.log(cakeRecipe)
 for(row in cakeRecipe){console.log(row)}
 for(row of cakeRecipe){console.log(row)}
 
-console.log(cakeRecipe.keys())
-console.log(cakeRecipe.entries())
+console.log(cakeRecipe.keys()) // Ingredients
+console.log(cakeRecipe.values()) // Amounts
+console.log(cakeRecipe.entries()) // Total
+
+
+let dnd = {
+    Name: 'Atlas',
+    ID: '7893',
+    Weapon: 'Fists',
+    Magic: 'Stone',
+    Gender: 'Male'
+}
+
+let info = new Map(Object.entries(dnd))
+console.log(info.keys())
+
+const slang = new Set(["Ts", "Pmo", "J#b"])
+console.log(slang)
+slang.add("Ikiab")
+console.log(slang.size)
+slang.delete("J#b")
+console.log(slang.has("Ts"))
+console.log(slang)
