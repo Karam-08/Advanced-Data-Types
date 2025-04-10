@@ -6,67 +6,65 @@ const arr = [
 
 // # 1
 function print2dArray(arr){
-    for(var i = 0; i < arr.length; i++){
-        console.log(arr[i])
+    for(var i = 0; i < arr.length; i++){ // For each row
+        console.log(arr[i]) // Print everything in the row
     }
 }
 
 // # 2
 function sum2dArray(arr){
-    let sum = 0
+    let sum = 0 // Sum value
     for(var i = 0; i < arr.length; i++){
-        for(var j = 0; j < arr[i].length; j++){
-            sum += arr[i][j];
+        for(var j = 0; j < arr[i].length; j++){ // For each row and column
+            sum += arr[i][j]; // Add each number in the rows and columns
         }
     }
-    return sum;
+    return sum; // Return total value
 }
 
 // # 3
 function modify2dArray(arr, row, col, newValue){
-    arr[row][col] = newValue
+    arr[row][col] = newValue // Modifies the selected array, row, and columns into the value of your choosing
 }
 
 // # 4
 function findMax(arr){
-    let max = 0
+    let max = 0 // Variable
     for(var i = 0; i < arr.length; i++){
-        for(var j = 0; j < arr[i].length; j++){
-            if(max < arr[i][j]){
-                max = arr[i][j];
+        for(var j = 0; j < arr[i].length; j++){ // For each row and column
+            if(max < arr[i][j]){ // If max is less than the number in the row/column
+                max = arr[i][j]; // max becomes that number
             }
         }
     }
-    return max;
+    return max; // Returns the highest number
 }
-
-findMax(arr)
 
 // # 5
 function transpose(){
-    let rows = arr.length
-    let cols = arr[0].length
-    let transposed = []
+    let rows = arr.length // Number of rows in OG array
+    let cols = arr[0].length // Number of columns in OG array
+    let transposed = [] // Empty array to store transposed array
 
     for(var j = 0; j < cols; j++){
-        transposed[j] = []
-        for(var i = 0; i < rows; i++){
-            transposed[j][i] = arr[i][j]
+        transposed[j] = [] // Makes sure that the j-th row exists before putting values in it
+        for(var i = 0; i < rows; i++){ 
+            transposed[j][i] = arr[i][j] // Swaps the row i and column j from the OG array
         }
     }
     return transposed
 }
 
 first = print2dArray(arr)
-console.log(first)
-console.log('')
+console.log(first) // Looks neater
+console.log('') // Purely for spacing
 
 second = sum2dArray(arr)
 console.log(second)
 console.log('')
 
-modify2dArray(arr, 0, 2, 15)
-console.log(arr)
+modify2dArray(arr, 1, 1, 10)
+console.log(arr) // Console.log(modify2dArray(arr)) doesn't work for some reason not sure why
 console.log('')
 
 fourth = findMax(arr)
