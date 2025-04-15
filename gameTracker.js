@@ -6,7 +6,7 @@ function addGame(player, game){
         playerGames.set(player, new Set());
     }
 
-    let gamesSet = playerGames.get(player)
+    gamesSet = playerGames.get(player)
     if(gamesSet.has(game)){
         console.log(`${player} already has ${game} in their list`)
     }else{
@@ -17,7 +17,7 @@ function addGame(player, game){
 
 function assignGames(player){
     while(playerGames < 3){
-        let randomGame = gameTitles[Math.floor(Math.random() * gameTitles.length)];
+        randomGame = gameTitles[Math.floor(Math.random() * gameTitles.length)];
         addGame(player, randomGame)
     }
 }
