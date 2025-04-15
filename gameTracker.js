@@ -1,23 +1,27 @@
 let gameTitles = ['Warframe', 'Black Ops Zombies', 'Half Life', 'Portal', 'Roblox', 'Dead Space', 'Fable: The Lost Chapters', 'Fortnite']
+let playerGames = new Map();
 
-function gamesPlayed(){
-    return
+function addGame(player, game){
+    if(!playerGames.has(player)){
+        playerGames.set(player, new Set());
+    }
+
+    let gamesSet = playerGames.get(player)
+    if(gamesSet.has(game)){
+        console.log(`${player} already has ${game} in their list`)
+    }else{
+        gamesSet.add(game)
+        console.log(`Added ${game} to ${player} list.`)
+    }
 }
 
-gamesPlayed = new Set([randomGame1, randomGame2, randomGame3])
+function assignGames(player){
+    while(playerGames < 3){
+        let randomGame = gameTitles[Math.floor(Math.random() * gameTitles.length)];
+        addGame(player, randomGame)
+    }
+}
 
-console.log(gamesPlayed)
+let players = ["Karam", "Hussein", "Maryam"]
 
-let gameScores = [
-    ['85', '92', '98'],
-    ['100', '80', '94'],
-    ['78', '92', '85']
-]
-
-let players = new Map([
-    ['Karam', gamesPlayed],
-    ['Jayden', gamesPlayed],
-    ['Hussein', gamesPlayed]
-])
-
-console.table(players)
+console.log(playerGames)
