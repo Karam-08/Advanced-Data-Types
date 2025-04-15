@@ -12,8 +12,6 @@ let gameScores = [
 
 function assignGames(){
     while(playerGames < 3){
-        randomGame = gameTitles[Math.floor(Math.random() * gameTitles.length)];
-        playerGames.set(players, randomGame)
     }
 }
 
