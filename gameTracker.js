@@ -2,7 +2,6 @@ let gameTitles = ['Warframe', 'Black Ops Zombies', 'Half Life', 'Portal', 'Roblo
 let players = ['Karam', 'Hussein', 'Jayden']
 
 playerGames = new Map(); 
-playerGames = new Map(); 
 
 let gameScores = [
     ['85', '92', '98'],
