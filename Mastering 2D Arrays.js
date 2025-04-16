@@ -19,7 +19,7 @@ function sum2dArray(arr){
             sum += arr[i][j]; // Add each number in the rows and columns
         }
     }
-    return sum; // Return total value
+    return sum/arr.length; // Return total value
 }
 
 // # 3
